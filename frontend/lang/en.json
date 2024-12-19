@@ -1,0 +1,278 @@
+{
+  "language": {
+    "default": {
+      "pl": "Polish - pl",
+      "en": "English - en",
+      "ger": "German - ger "
+    },
+    "dictionaryFormat": "{translation} - {key}"
+  },
+  "sidebar": {
+    "language": {
+      "title": "Choose Language"
+    },
+    "projectTitle": "Diet Project.",
+    "siderbarMenu": {
+      "home": "Home",
+      "projects": "Projects",
+      "adminPanel": "Admin Panel",
+      "login": "Login",
+      "logout": "LogOut"
+    }
+  },
+  "loadingSpinner": {
+    "information": "Loading...",
+    "informationMore": "This may take a few seconds...",
+    "informationForm": "Loading forms...",
+    "informationGlobal": "Loading data, please wait...",
+    "stores": {
+      "userData": "Automatic login is being checked...",
+      "dictionary": "Dictionaries are loading...",
+      "projects": "Loading projects...",
+      "fileMultipleProject": "Loading various photos from projects...",
+      "users": "Loading users...",
+      "authorization": "Loading user data..."
+    }
+  },
+  "footer": {
+    "info": "Copyright {year} Artur Ścibor. All rights reserved."
+  },
+  "banner": {
+    "h1": "Hi, my name is Artur,",
+    "h2": "This is my next project, built for daily work and self-realization. This project is used to record my daily results, especially during long-term challenges or goals. Currently, there is one project that documents my transformation over 150 days.",
+    "h3": "What was the purpose of building this project?",
+    "h4": "I created a program that calculates statistics from week to week based on my daily data and results. I thought it would be nice to create a basic project that would make things easier for me and that I could expand and improve at any time. The project is available to many people who can record their progress. To gain access, you need to contact me. I also consider this project as another addition to my portfolio.",
+    "h5": "What tools were used to build the project:",
+    "p1": "Frontend:",
+    "p2": "Backend:",
+    "h6": "Summary:",
+    "p": "Thank you for reaching this point. I assume that the project does not have a 'wow' factor, but that was its goal. It is a project built on powerful tools that have been used here. The visual layer was not designed from scratch but rather partially modeled on another site.",
+    "list": {
+      "frontend": {
+        "nuxt3": "Nuxt3",
+        "vuetify": "Vuetify",
+        "vueForm": "VueForm",
+        "i18n": "I18n",
+        "auth0": "Auth0",
+        "cypress": "Cypress"
+      },
+      "backend": {
+        "golang": "Golang",
+        "gin": "Library Gin",
+        "sql": "Library SQL",
+        "auth0": "Auth0",
+        "postgresql": "PostgreSql"
+      }
+    }
+  },
+  "profilePanel": {
+    "tabs": {
+      "project": "Projects",
+      "create_project": "Create Project",
+      "post": "Posts",
+      "create_post": "Create Post",
+      "user": "User"
+    },
+    "autoGenerateForm": {
+      "label": {
+        "addTraining": "Add Training"
+      },
+
+      "email": "E-Mail",
+      "userName": "First Name",
+      "lastName": "Last Name",
+      "nickName": "Nickname",
+      "role": "Role",
+      "phoneNumber": "Phone Number",
+      "title": "Title",
+      "description": "Description",
+      "date": "Data",
+      "files": "Files",
+      "fileProject": "File Project",
+      "fileFigure": "File Figure",
+      "fileWeight": "File Weight",
+      "fileKcal": "File Kcal",
+      "fileTraining": "File Training",
+      "selectProject": "Select project",
+      "day": "Day",
+      "weight": "Weight",
+      "kcal": "Kcal",
+      "type": "Type of sport",
+      "time": "Session time",
+
+      "button": {
+        "addProject": "Add Project",
+        "addPost": "Add Post",
+        "changeProject": "Update the project",
+        "changePost": "Update the post",
+        "changeUser": "Update user",
+        "addTraining": "Add training"
+      },
+
+      "messages": {
+        "required": "The :attribute must be completed.",
+        "email": "The :attribute address must be a valid email address.",
+        "max": "The length of :attribute cannot be longer than :max characters.",
+        "min": "The length of :attribute must be longer than :min characters.",
+        "image": {
+          "max": "The size of :attribute cannot exceed :max kilobytes."
+        },
+        "custom": {
+          "project": "Select Project.",
+          "typeTraining": "Select training type.",
+          "typeTrainingTime": "Error in time validation."
+        }
+      }
+    },
+    "projectPanel": {
+      "createProject": {
+        "title": "Create Project",
+        "description": "If you want to create a project in three languages, you need to add the project separately each time. So you create it in Polish, then English and German versions. If you add only one version, it will not appear after changing the language."
+      },
+      "user": {
+        "title": "User Values",
+        "description": "To be displayed in the projects section, you need to fully complete your information. Otherwise, you will not appear in the user selection in projects."
+      },
+      "cards": {
+        "button": {
+          "delete": "Delete project",
+          "change": "Edit the project",
+          "download": "Download project"
+        }
+      },
+      "lists": {
+        "posts": {
+          "button": {
+            "change": "Edit the Post"
+          }
+        }
+      }
+    }
+  },
+  "alert": {
+    "message": {
+      "positive": {
+        "project": {
+          "addProject": "Project added successfully",
+          "changeProject": "The update went correctly",
+          "deleteProject": "Project deleted correctly"
+        },
+        "post": {
+          "addPost": "Post added successfully",
+          "changePost": "The post update went smoothly",
+          "deletePost": "Post successfully deleted"
+        },
+        "user": {
+          "change": "User update was successful"
+        },
+        "file": {
+          "createFile": "Photos added correctly",
+          "deleteAllFile": "All photos deleted",
+          "deleteFile": "Photo removed",
+          "download": "The project has been downloaded successfully"
+        }
+      },
+      "error": {
+        "project": {
+          "addProject": "Project not added successfully!",
+          "changeProject": "Error while updating the project",
+          "deleteProject": "Error deleting project"
+        },
+        "post": {
+          "addPost": "Error adding a post",
+          "changeProject": "Error while updating the project",
+          "deletePost": "Error deleting post"
+        },
+        "user": {
+          "change": "User update failed"
+        },
+        "file": {
+          "createFile": "Error adding photos",
+          "deleteAllFile": "All photos deleted",
+          "deleteFile": "Error deleting photo",
+          "download": "Error downloading the project"
+        }
+      },
+      "warning": {
+        "post": {
+          "time": "Error checking 'time session' validation!"
+        }
+      }
+    }
+  },
+  "tabs": {
+    "select": {
+      "pages": "Pages"
+    },
+    "confirmButton": {
+      "default": {
+        "buttons": {
+          "close": "Close",
+          "description": "Description",
+          "posts": "See posts",
+          "statistics": "See statistics"
+        }
+      },
+      "project": {
+        "title": "Delete the project",
+        "text": "Are you sure you want to delete the project named: {name}?",
+        "deleteButton": "Delete the project",
+        "openDialog": "Delete the project"
+      },
+      "post": {
+        "title": "Delete post",
+        "text": "Are you sure you want to delete the post named: {name}?",
+        "deleteButton": "Delete post",
+        "openDialog": "Delete post"
+      }
+    }
+  },
+  "selects": {
+    "select": {
+      "user": "Select user",
+      "project": "Select project"
+    },
+    "typeTraining": {
+      "bike": "Cycling",
+      "run": "Running",
+      "swim": "Swimming",
+      "hike": "Hiking",
+      "gym": "Gym Workout"
+    }
+  },
+  "lists": {
+    "profilePanel": {
+      "posts": {
+        "day": "Day - {day}",
+        "weight": "Weight - {weight} kg",
+        "kcal": "Kcal - {kcal} kcal",
+        "typeTraining": "Training Type - {typeTraining}",
+        "timeTraining": "Training Time - {timeTraining}",
+        "kcalTraining": "Calories burned - {kcalTraining}",
+        "training": "Training",
+        "informationDay": "Information of the Day",
+        "images": "Images",
+        "days": "Days"
+      }
+    },
+    "posts": {
+      "buttons": {
+        "seePost": "See the day",
+        "posts": "See Days"
+      }
+    },
+    "statistics": {
+      "noStatistics": "No statistics",
+      "week": "Week: {week}",
+      "startWeight": "Start Weight: {startWeight} kg",
+      "endWeight": "End Weight: {endWeight} kg",
+      "downWeight": "Weight Down: {downWeight} kg",
+      "upWeight": "Waga Up: {upWeight} kg",
+      "sumKg": "Total Kilograms: {sumKg} kg",
+      "avgKg": "Average Weight: {avgKg kg}",
+      "sumKcal": "Total kcal: {sumKcal}",
+      "training": "Training Type: {type}, Number of Trainings: {current}, Total Calories Burned: {sumKcal}, Duration of Training Sessions: {time}",
+      "sumTime": "Total Training Time: {sumTime}"
+    }
+  }
+}

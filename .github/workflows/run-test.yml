@@ -1,0 +1,46 @@
+name: run test
+on:
+    workflow_dispatch:
+    # @TODO change it after succesfully run push to dockerhub 
+    # push:
+    #   branches:
+    #     - main
+    pull_request:
+      branches:
+        - main
+    
+jobs:
+  run-integration-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
+      - name: Set up Docker
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to DockerHub
+        uses: docker/login-action@v3
+        with:
+           username: ${{ vars.DOCKERHUB_USER }}
+           password: ${{ secrets.DOCKERHUB_TOKEN }}
+ 
+       
+      - name: Run tests with Docker Compose
+        env:
+          AUTH0_AUDIENCE: ${{ vars.AUTH0_AUDIENCE }}
+          AUTH0_CLIENT_ID: ${{ vars.AUTH0_CLIENT_ID }}
+          AUTH0_DOMAIN: ${{ vars.AUTH0_DOMAIN }}
+          BASEURL: ${{ vars.BASEURL }}
+          DB_DBNAME: ${{ vars.DB_DBNAME }}
+          DB_USER: ${{ vars.DB_USER }}
+          DB_HOST: ${{ vars.DB_HOST }}
+          DB_PORT: ${{ vars.DB_PORT }}
+          FRONT_URL: ${{ vars.FRONT_URL }}
+          PORT: ${{ vars.PORT }}
+
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          
+        run: |
+           docker compose -f docker-compose.testing.yml up --abort-on-container-exit --remove-orphans
+           docker compose -f docker-compose.testing.yml down --volumes

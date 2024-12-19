@@ -1,0 +1,16 @@
+export const paths = {
+  home: "/",
+  projects: "/projects",
+  posts: "/posts",
+  logOut: "/logout",
+  statistics: "/projects/statistics",
+  testPanel: "/testPanel",
+  profilePanel: "/profilePanel",
+  profilePanelUser: "/profilePanel/user",
+  profilePanelProject: `/profilePanel/projects`,
+  profilePanelProjectChange: `/profilePanel/projects/change`,
+  profilePanelProjectCreate: `/profilePanel/projects/create`,
+  profilePanelPosts: "/profilePanel/posts",
+  profilePanelPostCreate: `/profilePanel/posts/create`,
+  profilePanelPostChange: `/profilePanel/posts/change`,
+};

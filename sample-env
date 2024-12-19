@@ -1,0 +1,20 @@
+# Backend
+PORT=3001
+
+# Database
+DB_HOST=psql_db_training_app
+DB_PORT=5432
+DB_USER=admin
+DB_PASSWORD=mysecurepassword
+DB_DBNAME=training_app
+
+# Auth0
+AUTH0_DOMAIN=your-auth0-domain
+AUTH0_AUDIENCE=your-auth0-audience
+AUTH0_CLIENT_ID= your-auth0-client-id
+AUTH0_EMAIL= your-auth0-email 
+AUTH0_PASSWORD= your-auth0-password
+AUTH0_DIET_ENDPOINT= your-auth0-endpoint
+# Frontend & Base URL
+FRONT_URL=front_training_app
+BASEURL=api_training_app

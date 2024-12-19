@@ -1,0 +1,282 @@
+{
+  "language": {
+    "default": {
+      "pl": "Polski - pl",
+      "en": "Angielski - en",
+      "ger": "Niemiecki - ger"
+    },
+    "dictionaryFormat": "{translation} - {key}"
+  },
+  "sidebar": {
+    "language": {
+      "title": "Wybierz język"
+    },
+    "projectTitle": "Projekt Dieta.",
+    "siderbarMenu": {
+      "home": "Strona główna",
+      "projects": "Projekty",
+      "adminPanel": "Panel Administratora",
+      "login": "Logowanie",
+      "logout": "Wyloguj się"
+    }
+  },
+  "loadingSpinner": {
+    "information": "Ładowanie...",
+    "informationMore": "Może to potrwać kilka sekund...",
+    "informationForm": "Ładowanie formularza...",
+    "informationGlobal": "Ładowanie danych, proszę czekać...",
+    "stores": {
+      "userData": "Trwa sprawdzanie automatycznego logowania...",
+      "dictionary": "Trwa ładowanie słowników...",
+      "projects": "Trwa ładowanie projektów...",
+      "fileMultipleProject": "Trwa wczytywanie różnych zdjęć z projektów...",
+      "users": "Trwa ładowanie użytkowników...",
+      "authorization": "Trwa ładowanie danych użytkownika..."
+    }
+  },
+  "footer": {
+    "info": "Copyright {year} Artur Ścibor. Wszystkie prawa zastrzeżone."
+  },
+  "banner": {
+    "h1": "Cześć, nazywam się Artur,",
+    "h2": "To jest mój kolejny projekt, który zbudowałem do codziennej pracy i samorealizacji. Ten projekt służy do zapisywania moich codziennych wyników, zwłaszcza podczas realizacji długoterminowych wyzwań lub challengów. Obecnie jest tu jeden projekt, który dokumentuje moją przemianę w 150 dni.",
+    "h3": "Jaki był cel budowy projektu?",
+    "h4": "Zbudowałem program, który liczy statystyki z tygodnia na tydzień na podstawie moich codziennych danych i wyników. Stwierdziłem, że będzie fajnie stworzyć podstawowy projekt, który będzie dla mnie ułatwieniem i który będę mógł w każdej chwili rozbudowywać i ulepszać. Projekt jest dostępny dla wielu osób, które mogą zapisywać swoje postępy. Aby uzyskać dostęp, należy się ze mną skontaktować. Traktuję ten projekt także jako kolejny element mojego portfolio.",
+    "h5": "Jakie narzędzia zostały użyte do budowy projektu:",
+    "p1": "Frontend:",
+    "p2": "Backend:",
+    "h6": "Podsumowanie:",
+    "p": " Dziękuję, że tu dotarłeś. Przypuszczam, że projekt nie robi 'wow', ale taki był jego cel. Jest to projekt stworzony na bazie potężnych narzędzi, które zostały tu użyte. Warstwa wizualna nie została zaprojektowana od podstaw, ale raczej częściowo odwzorowana z innej strony.",
+    "list": {
+      "frontend": {
+        "nuxt3": "Nuxt3",
+        "vuetify": "Vuetify",
+        "vueForm": "VueForm",
+        "i18n": "I18n",
+        "auth0": "Auth0",
+        "cypress": "Cypress"
+      },
+      "backend": {
+        "golang": "Golang",
+        "gin": "Biblioteka Gin",
+        "sql": "Biblioteka SQL",
+        "auth0": "Auth0",
+        "postgresql": "PostgreSql"
+      }
+    }
+  },
+  "profilePanel": {
+    "tabs": {
+      "project": "Projekty",
+      "create_project": "Stwórz Projekt",
+      "post": "Posty",
+      "create_post": "Stwórz Post",
+      "user": "Użytkownik"
+    },
+    "autoGenerateForm": {
+      "label": {
+        "addTraining": "Dodaj trening"
+      },
+
+      "placeholder": {
+        "time": "01:10:59 - 1:05:05 - 00:30:30 - 00:10:59"
+      },
+
+      "email": "E-Mail",
+      "userName": "Imie",
+      "lastName": "Nazwisko",
+      "nickName": "Ksywa",
+      "role": "Rola",
+      "phoneNumber": "Numer Telefonu",
+      "title": "Tytuł",
+      "description": "Opis",
+      "date": "Data",
+      "files": "Zdjecia",
+      "fileProject": "Zdjęcie projektu",
+      "fileFigure": "Zdjęcie sylwetki",
+      "fileWeight": "Zdjęcie wagi",
+      "fileKcal": "Zdjęcie kalorii",
+      "fileTraining": "Zdjęcie treningu",
+      "selectProject": "Wybierz projekt",
+      "day": "Dzień",
+      "weight": "Waga",
+      "kcal": "Kalorie",
+      "type": "Typ sportu",
+      "time": "Czas sesji",
+
+      "button": {
+        "addProject": "Dodaj projekt",
+        "addPost": "Dodaj Post",
+        "changeProject": "Zaktualizuj projekt",
+        "changePost": "Zaktualizuj post",
+        "changeUser": "Zaktualizuj użytkownika",
+        "addTraining": "Dodaj trening"
+      },
+
+      "messages": {
+        "required": "Musi :attribute być uzupełnione.",
+        "email": "Adres :attribute musi być prawidłowym adresem e-mail.",
+        "max": "Długość :attribute nie może być dłuższa niż :max znaków.",
+        "min": "Długość :attribute musi być dłuższa niż :min znaków.",
+        "image": {
+          "max": "Rozmiar :attribute nie może przekraczać :max kilobajtów."
+        },
+        "custom": {
+          "project": "Wybierz Projekt.",
+          "typeTraining": "Wybierz typ treningu.",
+          "typeTrainingTime": "Błąd w walidacji czasu."
+        }
+      }
+    },
+    "projectPanel": {
+      "createProject": {
+        "title": "Tworzenie projektu",
+        "description": "Jeśli chcesz stworzyć projekt w trzech językach musisz dodać projekt osobno za każdym razem. Czyli tworzysz go w wersji polskiej, później angielskiej i niemieckiej. Jeśli dodasz tylko w jednej wersji to po zmianie języka on nie pojawi się."
+      },
+      "user": {
+        "title": "Wartości użytkownika",
+        "description": "Aby być wyświetlanym w sekcji projekty, musisz w pełni uzupełnić swoje dane. W przeciwnym razie nie pojawisz się w wyborze użytkownika w projektach."
+      },
+      "cards": {
+        "button": {
+          "delete": "Usuń projekt",
+          "change": "Edytuj projekt",
+          "downoload": "Pobierz projekt"
+        }
+      },
+      "lists": {
+        "posts": {
+          "button": {
+            "change": "Edytuj Post"
+          }
+        }
+      }
+    }
+  },
+  "alert": {
+    "message": {
+      "positive": {
+        "project": {
+          "addProject": "Dodano pomyślnie projekt",
+          "changeProject": "Aktualizacja przebiegła poprawnie",
+          "deleteProject": "Usunięto poprawnie projekt"
+        },
+        "post": {
+          "addPost": "Dodano pomyślnie post",
+          "changePost": "Aktualizacja posta przebiegał sprawnie",
+          "deletePost": "Usunięto pomyslnie post"
+        },
+        "user": {
+          "change": "Aktualizacja użytkownika przebiegła poprawnie"
+        },
+        "file": {
+          "createFile": "Dodano zdjęcia poprawnie",
+          "deleteAllFile": "Usunięto wszystkie zdjęcia",
+          "deleteFile": "Usunięto zdjęcie",
+          "download": "Pobrano poprawnie projekt"
+        }
+      },
+      "error": {
+        "project": {
+          "addProject": "Nie dodano pomyslnie projektu",
+          "changeProject": "Błąd podczas aktualizacji projektu",
+          "deleteProject": "Błąd podczas usuwania projektu"
+        },
+        "post": {
+          "addPost": "Błąd podczas dodawania posta",
+          "changePost": "Błąd podczas aktualizacji posta",
+          "deletePost": "Błąd podczas usuwania posta"
+        },
+        "user": {
+          "change": "Aktualizacja użytkownika nie powiodła się"
+        },
+        "file": {
+          "createFile": "Błąd podczas dodawania zdjęć",
+          "deleteAllFile": "Wystąpił błąd podczas usuwania wszystkich zdjęć",
+          "deleteFile": "Błąd podczas usuwania zdjęcia",
+          "download": "Błąd podczas pobierania projektu"
+        }
+      },
+      "warning": {
+        "post": {
+          "time": "Błąd podczas sprawdzania validacji 'sesji czasu'!"
+        }
+      }
+    }
+  },
+  "tabs": {
+    "select": {
+      "pages": "Strony"
+    },
+    "confirmButton": {
+      "default": {
+        "buttons": {
+          "close": "Zamknij",
+          "description": "Opis",
+          "posts": "Zobacz posty",
+          "statistics": "Zobacz statystyki"
+        }
+      },
+      "project": {
+        "title": "Usuń projekt",
+        "text": "Czy jesteś pewny, że chcesz usunąć projekt o nazwie: {name}?",
+        "deleteButton": "Usuń projekt",
+        "openDialog": "Usuń projekt"
+      },
+      "post": {
+        "title": "Usuń post",
+        "text": "Czy jesteś pewny, że chcesz usunąć post o nazwie: {name}?",
+        "deleteButton": "Usuń post",
+        "openDialog": "Usuń post"
+      }
+    }
+  },
+  "selects": {
+    "select": {
+      "user": "Wybierz użytkownika",
+      "project": "Wybierz projekt"
+    },
+    "typeTraining": {
+      "bike": "Jazda na rowerze",
+      "run": "Bieganie",
+      "swim": "Pływanie",
+      "hike": "Wędrówki",
+      "gym": "Ćwiczenia na siłowni"
+    }
+  },
+  "lists": {
+    "profilePanel": {
+      "posts": {
+        "day": "Dzień - {day}",
+        "weight": "Waga - {weight} kg",
+        "kcal": "Kalorie - {kcal} kcal",
+        "typeTraining": "Typ Treningu - {typeTraining}",
+        "timeTraining": "Czas Treningu - {timeTraining}",
+        "kcalTraining": "Kalorie spalone - {kcalTraining}",
+        "training": "Trening",
+        "informationDay": "Informacje Dnia",
+        "images": "Zdjęcia",
+        "days": "Dni"
+      }
+    },
+    "posts": {
+      "buttons": {
+        "seePost": "Zobacz dzień",
+        "posts": "Zobacz Dni"
+      }
+    },
+    "statistics": {
+      "noStatistics": "Brak statystyk",
+      "week": "Tydzień: {week}",
+      "startWeight": "Startowa Waga: {startWeight} kg",
+      "endWeight": "Waga końcowa: {endWeight} kg",
+      "downWeight": "Waga w doł: {downWeight} kg",
+      "upWeight": "Waga w góre: {upWeight} kg",
+      "sumKg": "Suma kilogramów: {sumKg} kg",
+      "avgKg": "Średnia waga: {avgKg}",
+      "sumKcal": "Suma kcal: {sumKcal}",
+      "training": "Typ treningu: {type}, liczba treningów: {currecnt}, suma spalonych kalorii: {sumKcal}, czas trwania sekcji treningów: {time}",
+      "sumTime": "Suma czasu treningów: {sumTime}"
+    }
+  }
+}

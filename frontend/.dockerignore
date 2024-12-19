@@ -1,0 +1,21 @@
+# Ignoruj katalogi build oraz node_modules
+/output
+/.nuxt
+/node_modules
+
+# Pliki tymczasowe i logi
+yarn-error.log
+npm-debug.log
+*.log
+
+# Pliki konfiguracyjne, które nie są potrzebne w obrazie
+.DS_Store
+.env
+.git
+.gitignore
+.vscode
+.idea
+
+# Dokumentacja i inne pliki pomocnicze
+README.md
+coverage

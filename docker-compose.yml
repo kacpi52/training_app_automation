@@ -1,0 +1,71 @@
+services:
+
+  psql_db_training_app:
+    image: postgres:16-alpine3.20
+    container_name: psql_db_training_app
+    ports:
+      - 5432:5432
+    volumes:
+      - psql_db_training_app:/var/lib/postgresql/data
+      - ./dbshell:/docker-entrypoint-initdb.d/
+    networks:
+      - training_app
+    environment:
+      - POSTGRES_DB=${DB_DBNAME}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+
+  api_training_app:
+    container_name: api_training_app
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - 3001:3001
+    volumes:
+      - api_training_app:/usr/src/app/
+    networks:
+      - training_app
+    depends_on:
+      - psql_db_training_app
+    environment:
+      - PORT=${PORT}
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_DBNAME=${DB_DBNAME}  
+      - AUTH0_DOMAIN=${AUTH0_DOMAIN}
+      - AUTH0_AUDIENCE=${AUTH0_AUDIENCE}
+      - FRONT_URL=${FRONT_URL}
+      - BASEURL=${BASEURL}
+
+  front_training_app:
+    container_name: front_training_app
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    networks:
+      - training_app
+    depends_on:
+      - api_training_app
+    environment:
+      - API_SERVER=${BASEURL}
+      - DOMAIN_AUTH0=${AUTH0_DOMAIN}
+      - CLIENT_ID_AUTH0=${AUTH0_CLIENT_ID}
+      - REDIRECT_URL=${FRONT_URL}
+      - AUDIENCE=${AUTH0_AUDIENCE}
+      - AUTH0_EMAIL=${AUTH0_EMAIL}
+      - AUTH0_PASSWORD=${AUTH0_PASSWORD}
+      - DIET_AUTH0_ENDPOINT=${AUTH0_DIET_ENDPOINT}
+
+volumes:
+  api_training_app:
+  psql_db_training_app:
+
+networks:
+  training_app:
+    driver: bridge
+    

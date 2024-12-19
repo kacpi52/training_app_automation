@@ -1,0 +1,10 @@
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS post;
+DROP TABLE IF EXISTS training;
+DROP TABLE IF EXISTS images;
+DROP TABLE IF EXISTS project;
+DROP TABLE IF EXISTS dictionary;
+DROP TABLE IF EXISTS project_multi_language;
+DROP TABLE IF EXISTS statistics;
+DROP TABLE IF EXISTS type_training;
+DROP TABLE IF EXISTS dictionary_multi_language;

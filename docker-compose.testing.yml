@@ -1,0 +1,52 @@
+name: v1_test
+services:
+
+  psql_db_training_app:
+    image: postgres:16-alpine3.20
+    container_name: psql_db_training_app
+    ports:
+      - 5432:5432
+    volumes:
+      - psql_db_training_app:/var/lib/postgresql/data
+      - ./dbshell:/docker-entrypoint-initdb.d/
+    networks:
+      - training_app_test
+    environment:
+       - POSTGRES_DB=${DB_DBNAME}
+       - POSTGRES_USER=${DB_USER}
+       - POSTGRES_PASSWORD=${DB_PASSWORD}
+
+  api_training_app:
+    container_name: api_training_app
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+      target: test
+    ports:
+      - 3001:3001
+    volumes:
+      - api_training_app:/app
+    networks:
+      - training_app_test
+    depends_on:
+      - psql_db_training_app
+    environment:
+      - PORT=${PORT}
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_DBNAME=${DB_DBNAME}  
+      - AUTH0_DOMAIN=${AUTH0_DOMAIN}
+      - AUTH0_AUDIENCE=${AUTH0_AUDIENCE}
+      - FRONT_URL=${FRONT_URL}
+      - BASEURL=${BASEURL}
+  
+volumes:
+  api_training_app:
+  psql_db_training_app:
+
+networks:
+  training_app_test:
+    driver: bridge
+    
