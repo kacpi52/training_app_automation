@@ -93,7 +93,13 @@ data "aws_iam_policy_document" "ec2" {
       "ec2:ModifyVpcAttribute",
       "ec2:RevokeSecurityGroupIngress",
       "ec2:DescribeAvailabilityZones",
-      "ec2:DescribeAccountAttributes"
+      "ec2:DescribeAccountAttributes",
+      "ec2:AllocateAddress",
+      "ec2:ReleaseAddress",
+      "ec2:DescribeAddresses",
+      "ec2:CreateNatGateway",
+      "ec2:DeleteNatGateway",
+      "ec2:DescribeNatGateways"
     ]
     resources = ["*"]
   }
@@ -308,3 +314,4 @@ resource "aws_iam_user_policy_attachment" "route53" {
   user       = aws_iam_user.cd.name
   policy_arn = aws_iam_policy.route53.arn
 }
+

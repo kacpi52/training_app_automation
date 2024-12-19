@@ -1,9 +1,10 @@
 name: push images to dockerHub
 on:
     workflow_dispatch: 
-    push:
-      branches:
-        - main
+    # @TODO reapply when tf infra finished 
+    # push:
+    #   branches:
+    #     - main
     pull_request:
       branches:
         - main

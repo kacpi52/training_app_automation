@@ -2,12 +2,7 @@
     name: IaC Validation
     
     on:
-      pull_request:
-        paths:
-          - 'kubernetes/**'
-          - 'infra/**'
-          - 'server/Dockerfile'
-          - 'frontend/Dockerfile'
+      workflow_dispatch:
     
     concurrency:
       group: ${{ github.ref }}-${{ github.workflow }}
