@@ -1,0 +1,35 @@
+name: Deploy to Kubernetes
+
+# runs only when deploy-terraform.yml worfklow ends with success
+on:
+  workflow_run:
+    workflows:
+      - deploy to aws infrastructure 
+    types:
+      - completed  
+env:
+  EKS_CLUSTER_NAME: training-app
+  AWS_REGION: us-east-1
+
+jobs:
+  deploy:
+    name: Deploy to EKS
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ vars.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Update kube config
+        run: aws eks update-kubeconfig --name $EKS_CLUSTER_NAME --region $AWS_REGION
+
+      - name: Deploy manifests to Kubernetes
+        run: |
+          kubectl apply -f k8s/

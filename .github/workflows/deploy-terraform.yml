@@ -1,10 +1,14 @@
-name: deploy to aws ecr 
-# push includes merge req into main 
+name: deploy to aws infrastructure 
+
 on:
     push:
         branches:
             - main
             - prod
+    pull_request:
+      branches:
+        - main
+        - prod
 
 jobs:
     deploy_tf:
