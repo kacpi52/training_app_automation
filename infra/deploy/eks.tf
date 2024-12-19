@@ -1,29 +1,4 @@
-# k8s cluster and role attach 
-resource "aws_iam_role" "training" {
-  name = "eks-cluster-training"
-
-  assume_role_policy = <<POLICY
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Principal": {
-        "Service": "eks.amazonaws.com"
-      },
-      "Action": "sts:AssumeRole"
-    }
-  ]
-}
-POLICY
-}
-
-resource "aws_iam_role_policy_attachment" "training-AmazonEKSClusterPolicy" {
-  policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
-  role       = aws_iam_role.training.name
-}
-
-
+# k8s cluster 
 
 resource "aws_eks_cluster" "training-app" {
   name     = local.eks_name
@@ -38,7 +13,6 @@ resource "aws_eks_cluster" "training-app" {
     ]
   }
 
-  depends_on = [aws_iam_role_policy_attachment.training-AmazonEKSClusterPolicy]
 }
 
 # k8s nodes 
@@ -71,6 +45,7 @@ resource "aws_iam_role_policy_attachment" "nodes-AmazonEC2ContainerRegistryReadO
   policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
   role       = aws_iam_role.nodes.name
 }
+
 # private nodes - non public ip 
 resource "aws_eks_node_group" "private-nodes" {
   cluster_name    = aws_eks_cluster.training-app.name

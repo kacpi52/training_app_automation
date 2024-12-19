@@ -315,3 +315,31 @@ resource "aws_iam_user_policy_attachment" "route53" {
   policy_arn = aws_iam_policy.route53.arn
 }
 
+# admin policy eks 
+data "aws_iam_policy_document" "eks_admin" {
+  statement {
+    effect = "Allow"
+    actions = [
+      "eks:*",
+      "ec2:DescribeInstances",
+      "ec2:DescribeNetworkInterfaces",
+      "ec2:CreateNetworkInterface",
+      "ec2:DeleteNetworkInterface",
+      "iam:PassRole",
+      "autoscaling:*",
+      "elasticloadbalancing:*",
+    ]
+    resources = ["*"]
+  }
+}
+
+resource "aws_iam_policy" "eks_admin" {
+  name        = "${aws_iam_user.cd.name}-eks-admin"
+  description = "Allow user to fully manage EKS resources."
+  policy      = data.aws_iam_policy_document.eks_admin.json
+}
+
+resource "aws_iam_user_policy_attachment" "eks_admin_attachment" {
+  user       = aws_iam_user.cd.name
+  policy_arn = aws_iam_policy.eks_admin.arn
+}
