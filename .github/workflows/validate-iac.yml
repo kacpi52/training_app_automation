@@ -1,0 +1,31 @@
+---
+    name: IaC Validation
+    
+    on:
+      pull_request:
+        paths:
+          - 'kubernetes/**'
+          - 'infra/**'
+          - 'server/Dockerfile'
+          - 'frontend/Dockerfile'
+    
+    concurrency:
+      group: ${{ github.ref }}-${{ github.workflow }}
+      cancel-in-progress: true
+    
+    permissions:
+      contents: write
+    
+    jobs:
+      iac:
+        name: Validate IaC
+        uses: kacpi52/common-actions/.github/workflows/iac-scan-trivy.yaml@main
+        with:
+          exit-code: 1 # fail the job if issues are found
+          severity: HIGH,CRITICAL
+          ignore-unfixed: true
+          format: table
+          upload-artifact: true
+          upload-release-assets: false
+          upload-results-github-security: false
+    
