@@ -33,8 +33,8 @@ locals {
   prefix      = "${var.prefix}-${terraform.workspace}"
   env         = terraform.workspace
   region      = "eu-central-1"
-  zone1       = "us-east-2a"
-  zone2       = "us-east-2b"
+  zone1       = "eu-central-1a"
+  zone2       = "eu-central-1b"
   eks_name    = "training-app"
   eks_version = "1.30"
 }
