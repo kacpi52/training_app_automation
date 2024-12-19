@@ -9,7 +9,10 @@ on:
       - main
 
 jobs:
-  push-images:
+  push-api:
+    secrets:
+      DOCKERHUB_USER: ${{ vars.DOCKERHUB_USER }}
+      DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
     uses: kacpi52/common-actions/.github/workflows/docker-build-push.yaml@main
     with:
       name: Backend
@@ -22,6 +25,9 @@ jobs:
         type=raw,value=latest,priority=50
 
   push-frontend:
+    secrets:
+      DOCKERHUB_USER: ${{ vars.DOCKERHUB_USER }}
+      DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
     uses: kacpi52/common-actions/.github/workflows/docker-build-push.yaml@main
     with:
       name: Frontend
