@@ -10,10 +10,10 @@ on:
 
 jobs:
   push-api:
+    uses: kacpi52/common-actions/.github/workflows/docker-build-push.yaml@main
     secrets:
       DOCKERHUB_USER: ${{ vars.DOCKERHUB_USER }}
       DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
-    uses: kacpi52/common-actions/.github/workflows/docker-build-push.yaml@main
     with:
       name: Backend
       context: ./server
@@ -25,10 +25,10 @@ jobs:
         type=raw,value=latest,priority=50
 
   push-frontend:
+    uses: kacpi52/common-actions/.github/workflows/docker-build-push.yaml@main
     secrets:
       DOCKERHUB_USER: ${{ vars.DOCKERHUB_USER }}
       DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
-    uses: kacpi52/common-actions/.github/workflows/docker-build-push.yaml@main
     with:
       name: Frontend
       context: ./frontend
