@@ -10,41 +10,25 @@ on:
 
 jobs:
   push-images:
-    name: Push Backend Image
-    runs-on: ubuntu-latest
-    steps:
-      - name: Extract short SHA
-        id: vars
-        run: echo "SHORT_SHA=${GITHUB_SHA::7}" >> $GITHUB_ENV
-
-      - name: Push Backend Image
-        uses: kacpi52/common-actions/.github/workflows/docker-build-push.yaml@main
-        with:
-          name: Backend
-          context: ./server
-          file: ./server/Dockerfile
-          image-names: kacpi52/training_app_api
-          push: true
-          tag-rules: |
-            type=raw,value=${{ env.SHORT_SHA }},priority=100
-            type=raw,value=latest,priority=50
+    uses: kacpi52/common-actions/.github/workflows/docker-build-push.yaml@main
+    with:
+      name: Backend
+      context: ./server
+      file: ./server/Dockerfile
+      image-names: kacpi52/training_app_api
+      push: true
+      tag-rules: |
+        type=raw,value=${{ github.sha }},priority=100
+        type=raw,value=latest,priority=50
 
   push-frontend:
-    name: Push Frontend Image
-    runs-on: ubuntu-latest
-    steps:
-      - name: Extract short SHA
-        id: vars
-        run: echo "SHORT_SHA=${GITHUB_SHA::7}" >> $GITHUB_ENV
-
-      - name: Push Frontend Image
-        uses: kacpi52/common-actions/.github/workflows/docker-build-push.yaml@main
-        with:
-          name: Frontend
-          context: ./frontend
-          file: ./frontend/Dockerfile
-          image-names: kacpi52/training_app_frontend
-          push: true
-          tag-rules: |
-            type=raw,value=${{ env.SHORT_SHA }},priority=100
-            type=raw,value=latest,priority=50
+    uses: kacpi52/common-actions/.github/workflows/docker-build-push.yaml@main
+    with:
+      name: Frontend
+      context: ./frontend
+      file: ./frontend/Dockerfile
+      image-names: kacpi52/training_app_frontend
+      push: true
+      tag-rules: |
+        type=raw,value=${{ github.sha }},priority=100
+        type=raw,value=latest,priority=50
