@@ -1,5 +1,22 @@
 # k8s cluster 
+resource "aws_iam_role" "training" {
+  name = "eks-cluster-training"
 
+  assume_role_policy = <<POLICY
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "eks.amazonaws.com"
+      },
+      "Action": "sts:AssumeRole"
+    }
+  ]
+}
+POLICY
+}
 resource "aws_eks_cluster" "training-app" {
   name     = local.eks_name
   role_arn = aws_iam_role.training.arn
