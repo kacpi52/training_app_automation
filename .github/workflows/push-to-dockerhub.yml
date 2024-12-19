@@ -1,4 +1,4 @@
-name: Push images to github container registry
+name: push to ghcr
 on:
   workflow_dispatch:
   push:
