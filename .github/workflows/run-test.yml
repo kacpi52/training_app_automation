@@ -1,7 +1,7 @@
 name: run test
 on:
     workflow_dispatch:
-    # @TODO change it after succesfully run push to dockerhub 
+    # @TODO decision
     # push:
     #   branches:
     #     - main
