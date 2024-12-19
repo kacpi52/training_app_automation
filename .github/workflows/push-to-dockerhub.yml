@@ -10,7 +10,7 @@ on:
 
 jobs:
   push-images:
-    uses: kacpi52/common-actions/.github/workflows/docker-build-and-push.yml@main
+    uses: kacpi52/common-actions/.github/workflows/docker-build-push.yaml@main
     with:
       name: Backend
       context: ./server
@@ -19,7 +19,7 @@ jobs:
       push: true
 
   push-frontend:
-    uses: kacpi52/common-actions/.github/workflows/docker-build-and-push.yml@main
+    uses: kacpi52/common-actions/.github/workflows/docker-build-push.yaml@main
     with:
       name: Frontend
       context: ./frontend
