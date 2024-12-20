@@ -18,6 +18,6 @@ jobs:
     uses: kacpi52/common-actions/.github/workflows/sast-validation-semgrep.yaml@main
     with:
       rules: "p/javascript"
-      upload-artifact: true
+      upload-artifact: false
       upload-release-assets: false
       upload-results-github-security: false
