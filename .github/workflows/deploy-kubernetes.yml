@@ -7,6 +7,7 @@ on:
       - deploy to aws infrastructure 
     types:
       - completed  
+  workflow_dispatch:
 env:
   EKS_CLUSTER_NAME: training-app
   AWS_REGION: us-east-1

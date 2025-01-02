@@ -1,15 +1,15 @@
 name: deploy to aws infrastructure 
 
 on:
-    push:
-        branches:
-            - main
-            - prod
-    pull_request:
-      branches:
-        - main
-        - prod
-
+    # push:
+    #     branches:
+    #         - main
+    #         - prod
+    # pull_request:
+    #   branches:
+    #     - main
+    #     - prod
+    workflow_dispatch:
 jobs:
     deploy_tf:
         runs-on: ubuntu-22.04
